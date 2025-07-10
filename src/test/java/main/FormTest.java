@@ -16,30 +16,20 @@ public class FormTest extends BaseSuite {
         String date = "12-12-2012";
         String languageLevel = "Продвинутый";
 
-        try {
-            FormPage formPage = new FormPage(driver);
-            formPage.open();
-            formPage.inputUsername(username);
-            formPage.inputEmail(email);
-            formPage.inputPassword(password);
-            formPage.confirmPassword(password);
-            formPage.validatePasswords();
-            formPage.inputDate(date);
+        FormPage formPage = new FormPage(driver);
+        formPage.open();
+        formPage.inputUsername(username);
+        formPage.inputEmail(email);
+        formPage.inputPassword(password);
+        formPage.confirmPassword(password);
+        formPage.validatePasswords();
+        formPage.inputDate(date);
 
-            formPage.selectLanguageLevel(languageLevel);
+        formPage.selectLanguageLevel(languageLevel);
 
-            formPage.sendForm();
+        formPage.sendForm();
 
-            formPage.validateOutputData(username, email, date, languageLevel);
+        formPage.validateOutputData(username, email, date, languageLevel);
 
-        } catch (AssertionError e) {
-            throw e;
-        } catch (Exception e) {
-            throw e;
-        } finally {
-            if (driver != null) {
-                driver.quit();
-            }
-        }
     }
 }
