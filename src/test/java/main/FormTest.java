@@ -10,8 +10,8 @@ public class FormTest extends BaseSuite {
     @Test
     @Description("Тест заполнения формы регистрации")
     public void fillRegistrationForm() {
-        String username = TestCredentials.getCredential("testLoginUsername");
-        String password = TestCredentials.getLoginPassword();
+        String username = System.getProperty("testLoginUsername");
+        String password = System.getProperty("getLoginPassword");
         String email = "testuser@testmail.ru";
         String date = "12-12-2012";
         String languageLevel = "Продвинутый";
